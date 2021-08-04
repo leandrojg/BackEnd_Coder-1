@@ -30,6 +30,7 @@ observable.subscribe({
         console.log('Completo');
     },
     error(error) {
+        stop();
         console.error(error);
     },
 });

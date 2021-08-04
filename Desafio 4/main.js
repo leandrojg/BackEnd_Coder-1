@@ -8,7 +8,7 @@ const observable = new Observable((suscriptor) => {
         const emitter = fromEvent(input, 'keyup').pipe(
             tap((e) => {
             const targetValue = e.target.value;
-            if (targetValue === 'error') suscriptor.error('Error ingresado');
+            if (targetValue === 'error') suscriptor.error('Ojo! Hay un error');
             if (targetValue === 'complete') suscriptor.complete();
             })
         );
@@ -27,7 +27,7 @@ observable.subscribe({
     },
     complete() {
         stop();
-        console.log("completado!");
+        console.log('Completo');
     },
     error(error) {
         console.error(error);
